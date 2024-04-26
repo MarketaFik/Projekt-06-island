@@ -17,6 +17,10 @@ body {
     line-height: 1.6;
 }
 
+p {
+    word-wrap: break-word;
+}
+
 
 /* HLAVICKA */
 
@@ -24,20 +28,322 @@ body {
     font-family: 'Raleway', serif;
 }
 
+.hlavicka {
+    background-image: url(images/island-hlavicka.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.titulek {
+    font-size: 2,5em;
+    font-weight: bold;
+    padding: 20px;
+}
+
+.perex {
+    word-wrap: break-word;
+    padding: 20px;
+}
+
+.autor {
+    font-style: italic;
+    position: relative;
+    padding: 20px;
+}
+
+.autor::before {
+    content: "";
+    position: absolute;
+    top: -10%; 
+    left: 45%;
+    right: 45%; 
+    height: 2px;
+    background-color: white;
+  }
 
 /* MENU */
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
 
+.menu li {
+    padding: 10px;
+    list-style-type: none;
+    justify-content: center;
+    text-align: center;
+}
 
+.menu li::after {    
+    content: '';
+    width: 100vw;
+    height: 1px;
+    background-color: grey;
+    display: inline-block;
+}
 
+.menu li a {
+    text-decoration: none;
+    color: grey;
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
 
 /* OBSAH */
+p {
+    padding: 20px;
+    word-wrap: break-word;
+}
 
+.imgisland {
+    width: 100vw;
+}
 
+.popisek {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: grey !important;
+    font-size: 0.8em;
+    margin-top: 0;
+}
 
+.popisek a {
+    color: grey;
+}
+
+h2 {
+    padding: 20px;
+    font-size: 1.5em;
+    position: relative;
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: -15vw;
+    right: 85vw;
+    top: 100%;
+    height: 4px;
+    display: inline-block;
+    background-color: rgb(22, 152, 228);
+}
+
+.imgisland, .island2, .island3 {
+    width: 100vw;
+    padding-bottom: 0;
+}
 
 /* FOTOGALERIE */
 
+.foto img{
+    width: 100vw;
+    }
 
+.foto p {
+    display: block;
+    text-align: center;
+    padding: 0;
+}
 
+.foto .popisek {
+    font-weight: bold;
+}
+
+.foto .popisek-copy {
+    display: block;
+    font-weight:200;
+}
 
 /* PATICKA */
+.paticka {
+    background-color: rgb(232, 229, 229);
+    position: relative;
+}
+
+.paticka::before {
+    content: '';
+    width: 100vw;
+    height: 10px;
+    display: inline-block;
+    background-image: linear-gradient(180deg, grey 0%, rgb(232, 229, 229) 100%);
+    position: absolute;
+    top: -10px;
+}
+
+.paticka p {
+    padding: 20px;
+    color: grey;
+    font-size: 0,8em;
+}
+
+.paticka a {
+    color: grey;
+}
+
+@media (min-width: 500px) {
+/*media500 menu*/
+.menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    border: 1px grey solid;
+    border-right: none;
+    padding: 5px;
+}
+
+.menu li::after {
+    display: none;
+}
+
+/*media500 galerie*/
+.galerie {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.foto {
+    flex-basis: 50%;
+}
+
+.foto img {
+    width: 100%;
+}
+
+/*media500 popisky fotek do obrazku JAK UDELAT BILY I COPYRIGHT???*/
+.fotkaspopiskem {
+    position: relative;
+}
+
+.popisek {
+    position: absolute;
+    bottom: -5px; 
+    right: -5px;
+    color: white;
+}
+
+.popisek a {
+    color: white;
+}
+
+.galerie .popisek,.galerie .popisek-copy {
+    display: none;
+}
+}
+
+/* WEB PRO PC */
+@media (min-width: 1000px) {
+
+/*media1000 pruh uprostred */
+.body {
+    background-color: rgb(232, 229, 229);
+}
+
+.obsah {
+    width: 960px;
+    margin: -20px auto 0;
+    padding: 20px;
+    background-color: white;
+    border: 1px grey solid;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+h2::after {
+    left: 0px;
+    top: 100%;
+    height: 4px;
+    width: 70px;
+    display: inline-block;
+    background-color: rgb(22, 152, 228);
+}
+
+/*media1000 menu nalevo */
+.menu li::after {    
+    content: '';
+    width: 180px;
+    height: 1px;
+    background-color: grey;
+    display: inline-block;
+}
+
+.menu {
+    flex: 0 0 auto;
+    width: 200px;
+    border: none;
+    height: 150px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+/*media1000 Uvod */
+.uvod {
+    flex: 1;
+    width: 760px;
+    display: inline;
+    word-wrap: break-word;
+    padding-bottom: 20px;
+}
+
+.menuuvod {
+    display: flex;
+}
+
+/*media1000 Obsah */
+.imgisland, .island2, .island3 {
+    width: 959px;
+    margin: -20px;
+}
+
+.proc {
+    padding-right: 200px;
+}
+
+.comusite, .comusite2 {
+    padding-left: 200px;
+}
+
+/*media1000 fotogalerie ??? NEMOHU SE ZBAVIT MEZER A PADDINGU*/
+.galerie {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+.galerie .foto {
+    flex-basis: calc(100% / 3);
+}
+
+/*media1000 paticka*/
+.paticka::before {
+    display: none;
+}
+
+.paticka {
+    width: 960px;
+    margin: 20px auto 20px;
+    padding: 5px;
+    background-color:#f5f5f5;
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.paticka p {
+    padding: 0;
+    margin: 0;
+    font-size: 0.8em;
+}
+}
